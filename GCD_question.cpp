@@ -13,7 +13,7 @@ int main() {
 		int GCD = 0;
 		for( int i = 0 ; i < n ; i++ ) {
 			for( int j = i+1 ; j < n ; j++ ) {
-				if( gcd( v[i] , v[j] ) < 3 ) {
+				if( __gcd( v[i] , v[j] ) < 3 ) {
 					GCD = 1;
 				}
 			}

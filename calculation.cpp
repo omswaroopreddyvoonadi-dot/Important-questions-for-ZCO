@@ -1,4 +1,4 @@
-// We Need the Zero (X)
+//  Serval and Mocha's Array (Z)
 #include <bits/stdc++.h>
 using namespace std;
  
@@ -10,15 +10,17 @@ int main() {
 		for( int i = 0 ; i < n ; i++ ) {
 			cin >> v[i];
 		}
-		int x = 0;
+		int GCD = 0;
 		for( int i = 0 ; i < n ; i++ ) {
-			x = x ^ v[i];
+			for( int j = i+1 ; j < n ; j++ ) {
+				if( gcd( v[i] , v[j] ) < 3 ) {
+					GCD = 1;
+				}
+			}
 		}
-		if( x == 0 && n % 2 == 0 )
-			cout << "3\n" ;
-		else if( x != 0 && n % 2 == 0 )
-			cout << "-1\n" ;
-		else if( n % 2 == 1 )
-			cout << x << "\n" ;
+		if( GCD == 1 )
+			cout << "YES\n" ;
+		else
+			cout << "NO\n" ;
 	}
 }
